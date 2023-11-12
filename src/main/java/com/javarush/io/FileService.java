@@ -17,30 +17,29 @@ public class FileService {
 
     public String readFile() {
         StringBuilder readString = new StringBuilder();
-        try(FileInputStream fis = new FileInputStream(filePath)) {
+        try (FileInputStream fis = new FileInputStream(filePath)) {
             int i;
-            while ((i = fis.read())!=-1){
+            while ((i = fis.read()) != -1) {
                 readString.append((char) i);
             }
 
-        } catch (FileNotFoundException ex){
+        } catch (FileNotFoundException ex) {
             System.out.println("File not found!");
-        } catch (IOException e){
-            System.out.println("Oops! "+e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Oops! " + e.getMessage());
         }
         return readString.toString();
     }
-    public String writeFile(String encryptedText){
-        try(OutputStream fos = Files.newOutputStream(Paths.get(filePath+"[ENCRYPTED]"))){
+
+    public void writeFile(String encryptedText) {
+        try (OutputStream fos = Files.newOutputStream(Paths.get(filePath + "[ENCRYPTED]"))) {
             byte[] bytes = encryptedText.getBytes();
             fos.write(bytes);
-        }catch (IOException  ex){
-            System.out.println("Oops! "+ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("Oops! " + ex.getMessage());
 
         }
-        return "";
     }
-
 }
 
 
