@@ -11,6 +11,8 @@ public class CesarCipher {
             if (AlphabetSamples.EN_ALPHABET.contains(inputTextCharArray[i])) {
                 int currentIndexChar = AlphabetSamples.EN_ALPHABET.indexOf(inputTextCharArray[i]);
                 encryptedText.append(AlphabetSamples.EN_ALPHABET.get((currentIndexChar + key) % AlphabetSamples.EN_ALPHABET.size()));
+            } else {
+                encryptedText.append(inputTextCharArray[i]);
             }
         }
         return encryptedText;
@@ -24,6 +26,8 @@ public class CesarCipher {
                 int currentIndexChar = AlphabetSamples.EN_ALPHABET.indexOf(inputTextCharArrayArray[i]);
                 int currentIndexCharMinusKey = currentIndexChar > key ? currentIndexChar - key : AlphabetSamples.EN_ALPHABET.size() - (key - currentIndexChar);
                 decryptedText.append(AlphabetSamples.EN_ALPHABET.get(currentIndexCharMinusKey));
+            }else {
+                decryptedText.append(inputTextCharArrayArray[i]);
             }
         }
         return decryptedText;
