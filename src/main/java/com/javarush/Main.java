@@ -12,9 +12,9 @@ public class Main {
         System.out.println(str);
         fileService.writeFile(text);
         CesarCipher cesarCipher = new CesarCipher();
-        System.out.println(cesarCipher.CesarEncryptor(text,key));
-        String Encrypted = cesarCipher.CesarEncryptor(text,key).toString();
-        System.out.println(cesarCipher.CesarDecryptor(Encrypted,key));
+        System.out.println(cesarCipher.CesarEncryptorEnglish(text,key));
+        String Encrypted = cesarCipher.CesarEncryptorEnglish(text,key).toString();
+        System.out.println(cesarCipher.CesarDecryptorEnglish(Encrypted,key));
 
 
     }
