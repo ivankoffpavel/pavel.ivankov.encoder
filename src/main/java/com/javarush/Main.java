@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         String text = "HI mon I am fine*";
         int key = 5;
-        FileService fileService = new FileService("C:/Java/1.txt");
+        FileService fileService = new FileService("C:/Java/Greeting");
         String str = fileService.readFile();
         System.out.println(str);
         fileService.writeFile(text);

@@ -32,7 +32,7 @@ public class FileService {
     }
 
     public void writeFile(String encryptedText) {
-        try (OutputStream fos = Files.newOutputStream(Paths.get(filePath + "[ENCRYPTED]"))) {
+        try (OutputStream fos = Files.newOutputStream(Paths.get(filePath + " [ENCRYPTED]"))) {
             byte[] bytes = encryptedText.getBytes();
             fos.write(bytes);
         } catch (IOException ex) {
