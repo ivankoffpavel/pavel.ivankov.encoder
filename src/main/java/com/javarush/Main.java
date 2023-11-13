@@ -31,7 +31,6 @@ public class Main {
                 FileReader fileReader1 = new FileReader(cli.getFilePath());
                 CesarCipher cesarCipher1 = new CesarCipher();
                 String cesarCipherMethodResultDecrypted = cesarCipher1.CesarDecryptorEnglish(fileReader1.readFile(), cli.getKey()).toString();
-                System.out.println(cesarCipherMethodResultDecrypted);
                 FileWriter fileWriter1 = new FileWriter(cli.getFilePath());
                 fileWriter1.writeFile(cesarCipherMethodResultDecrypted);
                 break;
