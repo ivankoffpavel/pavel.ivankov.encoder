@@ -23,12 +23,17 @@ public class Main {
             case "encrypt":
                 FileReader fileReader = new FileReader(cli.getFilePath());
                 CesarCipher cesarCipher = new CesarCipher();
-                String cesarCipherMethodResult = cesarCipher.CesarDecryptorEnglish(fileReader.readFile(), cli.getKey()).toString();
+                String cesarCipherMethodResult = cesarCipher.CesarEncryptorEnglish(fileReader.readFile(), cli.getKey()).toString();
                 FileWriter fileWriter = new FileWriter(cli.getFilePath());
                 fileWriter.writeFile(cesarCipherMethodResult);
                 break;
             case "decrypt":
-                System.out.println("DecryptMethod is working...");
+                FileReader fileReader1 = new FileReader(cli.getFilePath());
+                CesarCipher cesarCipher1 = new CesarCipher();
+                String cesarCipherMethodResultDecrypted = cesarCipher1.CesarDecryptorEnglish(fileReader1.readFile(), cli.getKey()).toString();
+                System.out.println(cesarCipherMethodResultDecrypted);
+                FileWriter fileWriter1 = new FileWriter(cli.getFilePath());
+                fileWriter1.writeFile(cesarCipherMethodResultDecrypted);
                 break;
             case "brute_force":
                 System.out.println("Brute force is working...");
