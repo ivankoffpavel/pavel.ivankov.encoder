@@ -8,6 +8,10 @@ import java.nio.file.Paths;
 public class FileWriter {
     private String filePath;
 
+    public FileWriter(String filePath) {
+        this.filePath = filePath;
+    }
+
     public void writeFile(String encryptedText) {
         try (OutputStream fos = Files.newOutputStream(Paths.get(filePath + " [ENCRYPTED]"))) {
             byte[] bytes = encryptedText.getBytes();
