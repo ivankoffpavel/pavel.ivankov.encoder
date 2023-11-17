@@ -24,7 +24,7 @@ public class FileWriter {
             }
 
         } else {
-            try (OutputStream fos = Files.newOutputStream(Paths.get(filePath + " [ENCRYPTED]"))) {
+            try (OutputStream fos = Files.newOutputStream(Paths.get(filePath.substring(0,filePath.length()-4) + " [ENCRYPTED]"+".txt"))) {
                 byte[] bytes = encryptedText.getBytes();
                 fos.write(bytes);
             } catch (IOException ex) {
