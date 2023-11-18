@@ -15,9 +15,11 @@ public class CLI {
         command = scanner.nextLine();
         System.out.println("Please enter a source/dest filepath e.g \"C:/Java/test.txt\": ");
         filePath = scanner.nextLine();
-        System.out.println("Please enter a key:");
-        key = scanner.nextInt();
+        if (!command.equalsIgnoreCase("brute_force")) {
+            System.out.println("Please enter a key:");
+            key = scanner.nextInt();
         }
+    }
 
     public String getCommand() {
         return command;

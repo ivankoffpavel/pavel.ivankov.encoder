@@ -4,7 +4,8 @@ import com.javarush.constants.AlphabetSamples;
 
 public class CesarCipher {
 
-    public StringBuilder CesarEncryptorEnglish(String inputText, int key) {
+
+    public StringBuilder сesarEncryptorEnglish(String inputText, int key) {
         char[] inputTextCharArray = inputText.toCharArray();
         StringBuilder encryptedText = new StringBuilder();
         for (int i = 0; i < inputTextCharArray.length; i++) {
@@ -18,9 +19,10 @@ public class CesarCipher {
         return encryptedText;
     }
 
-    public StringBuilder CesarDecryptorEnglish(String inputText, int key) {
+    public StringBuilder сesarDecryptorEnglish(String inputText, int key) {
         char[] inputTextCharArrayArray = inputText.toCharArray();
         StringBuilder decryptedText = new StringBuilder();
+        StringBuilder decryptedTextWithoutDammSymbol = new StringBuilder();
         for (int i = 0; i < inputTextCharArrayArray.length; i++) {
             if (AlphabetSamples.EN_ALPHABET.contains(inputTextCharArrayArray[i])) {
                 int currentIndexChar = AlphabetSamples.EN_ALPHABET.indexOf(inputTextCharArrayArray[i]);
@@ -30,7 +32,14 @@ public class CesarCipher {
                 decryptedText.append(inputTextCharArrayArray[i]);
             }
         }
-        return decryptedText;
+        String decryptedTxt = decryptedText.toString();
+        char[] decrypted = decryptedTxt.toCharArray();
+        for (char symbol : decrypted) {
+            if (symbol != 'Â') {
+                decryptedTextWithoutDammSymbol.append(symbol);
+            }
+        }
+        return decryptedTextWithoutDammSymbol;
     }
 
     public StringBuilder CesarEncryptorUkrainian(String inputText, int key) {
