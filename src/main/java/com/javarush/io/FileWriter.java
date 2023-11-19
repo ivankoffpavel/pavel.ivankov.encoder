@@ -25,22 +25,21 @@ public class FileWriter {
     }
 
     public void writeFile(String encryptedText) {
-        if (filePath.contains(" [ENCRYPTED]")) {
-            String[] filePathArray = filePath.split(" ");
-            String newFilePath = filePathArray[0];
-            try (OutputStream fos = Files.newOutputStream(Paths.get(newFilePath + " [DECRYPTED]"))) {
+        if (filePath.contains("[ENCRYPTED]")) {
+            String newFilePath = filePath.substring(0,filePath.lastIndexOf("[ENCRYPTED]"));
+            try (OutputStream fos = Files.newOutputStream(Paths.get(newFilePath + "[DECRYPTED]"))) {
                 byte[] bytes = encryptedText.getBytes();
                 fos.write(bytes);
-                System.out.println("Resultfile - "+ newFilePath + " [DECRYPTED]");
+                System.out.println("Resultfile - "+ newFilePath + "[DECRYPTED]");
             } catch (IOException ex) {
                 System.out.println("Oops! " + ex.getMessage());
             }
 
         } else {
-            try (OutputStream fos = Files.newOutputStream(Paths.get(filePath.substring(0, filePath.length() - 4) + " [ENCRYPTED]" + ".txt"))) {
+            try (OutputStream fos = Files.newOutputStream(Paths.get(filePath.substring(0, filePath.length() - 4) + "[ENCRYPTED]" + ".txt"))) {
                 byte[] bytes = encryptedText.getBytes();
                 fos.write(bytes);
-                System.out.println("Resultfile - "+ filePath.substring(0, filePath.length() - 4) + " [ENCRYPTED]" + ".txt");
+                System.out.println("Resultfile - "+ filePath.substring(0, filePath.length() - 4) + "[ENCRYPTED]" + ".txt");
             } catch (IOException ex) {
                 System.out.println("Oops! " + ex.getMessage());
             }

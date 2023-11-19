@@ -26,7 +26,7 @@ public class CesarCipher {
         for (int i = 0; i < inputTextCharArrayArray.length; i++) {
             if (AlphabetSamples.EN_ALPHABET.contains(inputTextCharArrayArray[i])) {
                 int currentIndexChar = AlphabetSamples.EN_ALPHABET.indexOf(inputTextCharArrayArray[i]);
-                int currentIndexCharMinusKey = currentIndexChar > key ? currentIndexChar - key : AlphabetSamples.EN_ALPHABET.size() - (key - currentIndexChar);
+                int currentIndexCharMinusKey = currentIndexChar-key >= 0 ? currentIndexChar - key : AlphabetSamples.EN_ALPHABET.size() + (currentIndexChar-key);
                 decryptedText.append(AlphabetSamples.EN_ALPHABET.get(currentIndexCharMinusKey));
             } else {
                 decryptedText.append(inputTextCharArrayArray[i]);
