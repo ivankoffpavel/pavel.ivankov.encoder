@@ -59,10 +59,10 @@ public class FileWriter {
             }
 
         } else {
-            try (OutputStream fos = Files.newOutputStream(Paths.get(filePath.substring(0, filePath.length() - 4) + " (B key - " + key + ".txt"))) {
+            try (OutputStream fos = Files.newOutputStream(Paths.get(filePath.substring(0, filePath.length() - 4) + " (B key - " + key + ")"+".txt"))) {
                 byte[] bytes = encyptedText.getBytes();
                 fos.write(bytes);
-                System.out.println("Brute force decrypted file path - "+filePath.substring(0, filePath.length() - 4) + " (B key - " + key + ".txt");
+                System.out.println("Brute force decrypted file path - "+filePath.substring(0, filePath.length() - 4) + " (B key - " + key + ")"+".txt");
             } catch (IOException ex) {
                 System.out.println("Oops! " + ex.getMessage());
             }

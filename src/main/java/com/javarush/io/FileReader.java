@@ -24,6 +24,8 @@ public class FileReader {
             System.out.println("File not found!");
         } catch (IOException e) {
             System.out.println("Oops! " + e.getMessage());
+        }catch (NullPointerException e){
+            System.out.println("Catch nullpointer!");
         }
         return readString.toString();
     }
