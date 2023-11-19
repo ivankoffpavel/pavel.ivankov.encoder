@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pavel.ivankov.encoder:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pavel_ivankov_encoder_jar</output-path>
+    <root id="archive" name="pavel.ivankov.encoder.jar">
+      <element id="module-output" name="pavel.ivankov.encoder" />
+    </root>
+  </artifact>
+</component>
