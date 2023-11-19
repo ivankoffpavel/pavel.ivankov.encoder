@@ -32,7 +32,7 @@ public class CesarCipher {
                 decryptedText.append(inputTextCharArrayArray[i]);
             }
         }
-        String decryptedTxt = decryptedText.toString();
+        String decryptedTxt = decryptedText.toString(); // at first the symbol Â appeared, so this code remove it!!! The bug was in one string,when the currentInex equals to key
         char[] decrypted = decryptedTxt.toCharArray();
         for (char symbol : decrypted) {
             if (symbol != 'Â') {

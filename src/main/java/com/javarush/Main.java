@@ -75,15 +75,15 @@ public class Main {
                     } else {
                         System.out.println("Entered file doesn't exist!");
                     }
-
                     break;
+
                 case "brute_force":
                     FileReader fileReader2 = new FileReader(cli.getFilePath());
                     String encryptedText = fileReader2.readFile();
                     BruteForce bruteForce = new BruteForce(encryptedText, cli.getFilePath());
                     bruteForce.brutForce();
-
                     break;
+
                 default:
                     System.out.println("Your command was entered incorrect!");
                     System.out.println("Pay attention and try again...");

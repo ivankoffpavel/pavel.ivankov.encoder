@@ -25,7 +25,7 @@ public class BruteForce {
             for (char symbol : textToCharArray) {
                 if (AlphabetSamples.EN_ALPHABET.contains(symbol)) {
                     currentIndex = AlphabetSamples.EN_ALPHABET.indexOf(symbol);
-                    index = currentIndex - key > 0 ? currentIndex - key : (AlphabetSamples.EN_ALPHABET.size() - 1) + (currentIndex - key);
+                    index = currentIndex - key >= 0 ? currentIndex - key : (AlphabetSamples.EN_ALPHABET.size()) + (currentIndex - key);
                     stringBuilder.append(AlphabetSamples.EN_ALPHABET.get(index));
                 } else {
                     stringBuilder.append(symbol);
