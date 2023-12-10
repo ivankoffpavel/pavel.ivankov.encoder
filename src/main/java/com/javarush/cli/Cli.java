@@ -2,7 +2,7 @@ package com.javarush.cli;
 
 import java.util.Scanner;
 
-public class CLI {
+public class Cli {
     private String command;
     private String filePath;
     private int key;

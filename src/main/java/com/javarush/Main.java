@@ -1,12 +1,12 @@
 package com.javarush;
 
-import com.javarush.cli.CLI;
+import com.javarush.cli.Cli;
 
 public class Main {
     public static void main(String[] args) {
         final int threeArgs = 3;
         final int twoArgs = 2;
-        CLI cli = new CLI();
+        Cli cli = new Cli();
         MethodService ms = new MethodService();
         if (args.length == threeArgs) {
             String command = args[0];
@@ -24,7 +24,10 @@ public class Main {
 
         } else {
             cli.InputUser();
-            ms.threeArgsInputMethod(cli.getCommand(), cli.getFilePath(), cli.getKey());
+            String command = cli.getCommand();
+            String filePath = cli.getFilePath();
+            int key = cli.getKey();
+            ms.threeArgsInputMethod(command, filePath, key);
         }
     }
 }

@@ -24,7 +24,8 @@ public class MethodService {
                 FileWriter fileWriter = new FileWriter(filePath);
                 FileReader fileReader = new FileReader(filePath);
                 CesarCipher cesarCipher = new CesarCipher();
-                fileWriter.writeFile(cesarCipher.сesarEncryptorEnglish(fileReader.readFile(), key).toString());
+                Object cesarCipherEncryptObj = cesarCipher.сesarEncryptorEnglish(fileReader.readFile(), key);
+                fileWriter.writeFile(cesarCipherEncryptObj.toString());
                 break;
 
             case "decrypt":
@@ -33,7 +34,8 @@ public class MethodService {
                     FileReader fileReader1 = new FileReader(filePath);
                     CesarCipher cesarCipher1 = new CesarCipher();
                     FileWriter fileWriter1 = new FileWriter(filePath);
-                    fileWriter1.writeFile(cesarCipher1.сesarDecryptorEnglish(fileReader1.readFile(), key).toString());
+                    Object cesarCipherDecryptObj = cesarCipher1.сesarDecryptorEnglish(fileReader1.readFile(), key);
+                    fileWriter1.writeFile(cesarCipherDecryptObj.toString());
                 } else {
                     System.out.println("Entered file doesn't exist!");
                 }
