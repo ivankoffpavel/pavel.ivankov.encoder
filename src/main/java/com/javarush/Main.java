@@ -12,8 +12,10 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
+        final int threeArgs = 3;
+        final int twoArgs = 2;
         CLI cli = new CLI();
-        if (args.length == 3) {
+        if (args.length == threeArgs) {
             String command = args[0];
             String filePath = args[1];
             int key = Integer.parseInt(args[2]);
@@ -41,7 +43,7 @@ public class Main {
                     System.out.println("Your command was entered incorrect!");
                     System.out.println("Pay attention and try again...");
             }
-        } else if (args.length == 2) {
+        } else if (args.length == twoArgs) {
             String command = args[0];
             String filePath = args[1];
             if (command.equalsIgnoreCase("brute_force")) {
