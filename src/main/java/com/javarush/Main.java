@@ -1,7 +1,5 @@
 package com.javarush;
 
-import com.javarush.cli.Cli;
-
 public class Main {
     public static void main(String[] args) {
         final int threeArgs = 3;

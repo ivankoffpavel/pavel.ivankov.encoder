@@ -1,6 +1,5 @@
-package com.javarush.brute_force;
+package com.javarush;
 
-import com.javarush.constants.AlphabetSamples;
 import com.javarush.io.FileWriter;
 
 public class BruteForce {
@@ -12,8 +11,7 @@ public class BruteForce {
         this.filePath = filePath;
     }
 
-    public void brutForce() {
-
+    public void bruteForce() {
         int currentIndex;
         int index;
         int originalKey = 0;
@@ -35,11 +33,9 @@ public class BruteForce {
                 if (stringBuilder.toString().contains(AlphabetSamples.SIMPLE_WORDS.get(i))) {
                     keyIsNotFound = false;
                     originalKey = key;
-                    FileWriter fw = new FileWriter(filePath,originalKey,stringBuilder.toString());
+                    FileWriter fw = new FileWriter(filePath, originalKey, stringBuilder.toString());
                     fw.writeBfFile();
                     break;
-
-
                 }
             }
             key++;

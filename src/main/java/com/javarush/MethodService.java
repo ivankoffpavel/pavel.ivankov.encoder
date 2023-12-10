@@ -1,7 +1,5 @@
 package com.javarush;
 
-import com.javarush.brute_force.BruteForce;
-import com.javarush.cesarcipher.CesarCipher;
 import com.javarush.io.FileReader;
 import com.javarush.io.FileWriter;
 
@@ -14,7 +12,7 @@ public class MethodService {
         FileReader fileReader2 = new FileReader(filePath);
         String encryptedText = fileReader2.readFile();
         BruteForce bruteForce = new BruteForce(encryptedText,filePath);
-        bruteForce.brutForce();
+        bruteForce.bruteForce();
 
     }
 
@@ -45,7 +43,7 @@ public class MethodService {
                 FileReader fileReader2 = new FileReader(filePath);
                 String encryptedText = fileReader2.readFile();
                 BruteForce bruteForce = new BruteForce(encryptedText, filePath);
-                bruteForce.brutForce();
+                bruteForce.bruteForce();
                 break;
 
             default:
@@ -53,6 +51,7 @@ public class MethodService {
                 System.out.println("Pay attention and try again...");
         }
     }
+
 }
 
 

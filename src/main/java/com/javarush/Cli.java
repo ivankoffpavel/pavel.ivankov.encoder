@@ -1,4 +1,4 @@
-package com.javarush.cli;
+package com.javarush;
 
 import java.util.Scanner;
 
